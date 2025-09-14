@@ -20,3 +20,8 @@ jobs:
      
       - name: list
         run: ls -al
+
+      - name: build
+        run: |
+          docker build -t myapp:latest .
+          docker run -d -p 8080:80 myapp:latest
