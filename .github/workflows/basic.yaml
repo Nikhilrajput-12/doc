@@ -45,8 +45,7 @@ jobs:
  
       - name: pull
         run: |
-          ssh -o StrictHostKeyChecking=no -i ssh_key.pem  ubuntu@13.127.192.177 
+          ssh -o StrictHostKeyChecking=no -i ssh_key.pem  ubuntu@13.127.192.177 <<EOF 
           docker image pull nikhil2254/myapp:latest
-        
-
+          EOF 
 
