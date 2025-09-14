@@ -45,8 +45,8 @@ jobs:
  
       - name: pull
         run: |
-          ssh -o StrictHostKeyChecking=no -i ssh_key.pem  ubuntu@13.127.192.177 <<EOF
-          set -e
+          ssh -o StrictHostKeyChecking=no -i ssh_key.pem  ubuntu@13.127.192.177 
+          
         
 
 
