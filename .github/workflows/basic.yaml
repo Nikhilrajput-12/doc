@@ -23,5 +23,15 @@ jobs:
 
       - name: build
         run: |
-          docker build -t myapp:latest .
-          docker run -d -p 8080:80 myapp:latest
+          docker build -t nikhil2254/myapp:latest .
+
+      - name: push
+        env:
+          usr: ${{secrets.usr}}
+          psd: ${{secrets.psd}}
+        run: |
+
+          docker login -u "$usr" -p "$psd"
+          
+        
+          docker image push nikhil2254/myapp:latest
