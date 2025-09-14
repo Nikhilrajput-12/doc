@@ -49,6 +49,6 @@ jobs:
             set -e
 
             docker image pull nikhil2254/myapp:latest
-            docker run -d -p 80:80 nikhi2254/myapp:latest
+            docker run -d -p 80:80 nikhil2254/myapp:latest
           EOF
 
