@@ -51,5 +51,6 @@ jobs:
             docker image pull nikhil2254/myapp:latest
             docker container rm -f jaiho
             docker run -d -p 80:80 --name jaiho  nikhil2254/myapp:latest
+            docker system prune -a --force
           EOF
 
