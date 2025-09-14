@@ -35,3 +35,18 @@ jobs:
           
         
           docker image push nikhil2254/myapp:latest
+
+      - name: ssh key 
+        env:
+          SSH_KEY: ${{secrets.SSH_KEY}}
+        run: |
+          echo "$SSH_KEY" > ssh_key.pem
+          chmod 400 ssh_key.pem
+ 
+      - name: pull
+        run: |
+          ssh -o StrictHostKeyChecking=no -i ssh_key.pem  ubuntu@ec2-13-127-192-177 <<EOF
+          set -e
+        
+
+
