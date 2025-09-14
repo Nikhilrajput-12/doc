@@ -46,9 +46,10 @@ jobs:
       - name: pull
         run: |
           ssh -o StrictHostKeyChecking=no -i ssh_key.pem ubuntu@13.127.192.177  << EOF
-            set -e
+            
 
             docker image pull nikhil2254/myapp:latest
-            docker run -d -p 80:80 nikhil2254/myapp:latest
+            docker container rm -f jaiho
+            docker run -d -p 80:80 --name jaiho  nikhil2254/myapp:latest
           EOF
 
